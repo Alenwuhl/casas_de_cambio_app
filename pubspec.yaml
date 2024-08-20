@@ -63,6 +63,7 @@ flutter:
     - assets/
     - assets/cambio_chaco_assets/
     - assets/general_icons/
+    - assets/general_icons/menu_drawer/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

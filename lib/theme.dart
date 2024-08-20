@@ -7,8 +7,17 @@ class AppTheme {
         return ThemeData(
           primaryColor: const Color(0xFF004400), // Verde oscuro de Cambios Chaco #004400
           hintColor: const Color(0xFF27AE60), // Verde claro de Cambios Chaco #27AE60
-          scaffoldBackgroundColor: Colors.white, // Color de fondo blanco
+          scaffoldBackgroundColor: const Color(0xFFCECECE), // Color de fondo blanco
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Color(0xFF004400), // Color de la barra de navegación verde oscuro
+          ),
           textTheme: const TextTheme(
+            titleLarge: TextStyle(
+              fontFamily: 'HelveticaNeueLight',
+              fontWeight: FontWeight.w500,
+              fontSize: 35,
+              color: Color(0xFF004400), // Color para el texto principal #004400
+            ),
             displayLarge: TextStyle(
               fontFamily: 'HelveticaNeueLight',
               fontWeight: FontWeight.w300,
@@ -21,7 +30,19 @@ class AppTheme {
               fontSize: 20,
               color: Color(0xFF004400), // Color para el texto secundario #004400
             ),
+            displaySmall: TextStyle(
+              fontFamily: 'HelveticaNeueLight',
+              fontWeight: FontWeight.w300,
+              fontSize: 16,
+              color: Color(0xFF004400), // Color para el texto secundario #004400
+            ),
             labelLarge: TextStyle(
+              fontFamily: 'HelveticaNeueLight',
+              fontWeight: FontWeight.w400,
+              fontSize: 30,
+              color: Color(0xFFFFFFFF), // Color para el texto de los botones (blanco)
+            ),
+            labelMedium: TextStyle(
               fontFamily: 'HelveticaNeueLight',
               fontWeight: FontWeight.w300,
               fontSize: 18,
@@ -56,6 +77,7 @@ class AppTheme {
             secondary: const Color(0xFF27AE60), // Color de énfasis
           ),
         );
+        
       default:
         return ThemeData.light(); // Tema por defecto si no coincide ninguna empresa
     }

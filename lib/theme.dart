@@ -5,20 +5,27 @@ class AppTheme {
     switch (companyName) {
       case 'Cambios Chaco':
         return ThemeData(
-          primaryColor: const Color(0xFF004400), // Verde claro
-          scaffoldBackgroundColor: const Color(0xFFCECECE), // Color de fondo
+          primaryColor: const Color(0xFF004400), // Verde oscuro de Cambios Chaco #004400
+          hintColor: const Color(0xFF27AE60), // Verde claro de Cambios Chaco #27AE60
+          scaffoldBackgroundColor: Colors.white, // Color de fondo blanco
           textTheme: const TextTheme(
             displayLarge: TextStyle(
               fontFamily: 'HelveticaNeueLight',
               fontWeight: FontWeight.w300,
               fontSize: 24,
-              color: Color(0xFF004400), // Color para el texto principal
+              color: Color(0xFF004400), // Color para el texto principal #004400
+            ),
+            displayMedium: TextStyle(
+              fontFamily: 'HelveticaNeueLight',
+              fontWeight: FontWeight.w300,
+              fontSize: 20,
+              color: Color(0xFF004400), // Color para el texto secundario #004400
             ),
             labelLarge: TextStyle(
               fontFamily: 'HelveticaNeueLight',
               fontWeight: FontWeight.w300,
               fontSize: 18,
-              color: Color(0xFFFFFFFF), // Color para el texto de los botones
+              color: Color(0xFFFFFFFF), // Color para el texto de los botones (blanco)
             ),
             bodyLarge: TextStyle(
               fontFamily: 'HelveticaNeueLight',
@@ -40,7 +47,7 @@ class AppTheme {
             ),
           ),
           buttonTheme: ButtonThemeData(
-            buttonColor: const Color(0xFF004400), // Color para los botones
+            buttonColor: const Color(0xFF004400), // Color para los botones verde oscuro
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),

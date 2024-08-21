@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; 
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -12,8 +13,7 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-      ),
+      appBar: AppBar(),
       body: Stack(
         children: [
           Positioned(
@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: screenHeight * 0.3), // Deja espacio para el logo
+            padding: EdgeInsets.only(top: screenHeight * 0.3), 
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
               child: Column(
@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: screenHeight * 0.02),
                   TextField(
                     decoration: InputDecoration(
-                      labelText: 'Usuario',
+                      labelText: AppLocalizations.of(context)!.usernameLabel, 
                       labelStyle: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w300,
@@ -58,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                   TextField(
                     obscureText: true,
                     decoration: InputDecoration(
-                      labelText: 'Contraseña',
+                      labelText: AppLocalizations.of(context)!.passwordLabel,
                       labelStyle: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w300,
@@ -89,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                           vertical: screenHeight * 0.01),
                     ),
                     child: Text(
-                      'Ingresar',
+                      AppLocalizations.of(context)!.loginButton,
                       style: Theme.of(context).textTheme.labelLarge,
                     ),
                   ),
@@ -107,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                           vertical: screenHeight * 0.01),
                     ),
                     child: Text(
-                      'Registrarse',
+                      AppLocalizations.of(context)!.registerButton, 
                       style: Theme.of(context).textTheme.labelLarge,
                     ),
                   ),
@@ -116,7 +116,7 @@ class LoginScreen extends StatelessWidget {
                       // Acción para registrar o recuperar contraseña
                     },
                     child: Text(
-                      'Recuperar contraseña',
+                      AppLocalizations.of(context)!.recoverPasswordButton, 
                       style: Theme.of(context).textTheme.displayMedium,
                     ),
                   ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; 
 
 class ChangePasswordScreen extends StatelessWidget {
   const ChangePasswordScreen({super.key});
@@ -47,7 +47,7 @@ class ChangePasswordScreen extends StatelessWidget {
                         filled: true,
                         fillColor: Theme.of(context).inputDecorationTheme.fillColor,
                         hintText: AppLocalizations.of(context)!.currentPasswordHint, 
-                        hintStyle: Theme.of(context).inputDecorationTheme.hintStyle, 
+                        hintStyle: Theme.of(context).inputDecorationTheme.hintStyle,
                         prefixIcon: Padding(
                           padding: EdgeInsets.all(screenWidth * 0.02),
                           child: Image.asset(
@@ -71,7 +71,7 @@ class ChangePasswordScreen extends StatelessWidget {
                         filled: true,
                         fillColor: Theme.of(context).inputDecorationTheme.fillColor,
                         hintText: AppLocalizations.of(context)!.newPasswordHint, 
-                        hintStyle: Theme.of(context).inputDecorationTheme.hintStyle, 
+                        hintStyle: Theme.of(context).inputDecorationTheme.hintStyle,
                         prefixIcon: Padding(
                           padding: EdgeInsets.all(screenWidth * 0.02),
                           child: Image.asset(
@@ -94,8 +94,8 @@ class ChangePasswordScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Theme.of(context).inputDecorationTheme.fillColor,
-                        hintText: AppLocalizations.of(context)!.confirmPasswordHint,
-                        hintStyle: Theme.of(context).inputDecorationTheme.hintStyle, 
+                        hintText: AppLocalizations.of(context)!.confirmPasswordHint, 
+                        hintStyle: Theme.of(context).inputDecorationTheme.hintStyle,
                         prefixIcon: Padding(
                           padding: EdgeInsets.all(screenWidth * 0.02),
                           child: Image.asset(

@@ -59,13 +59,28 @@ class AppTheme {
             filled: true,
             fillColor: Colors.white, // Fondo blanco para los campos de texto
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              borderRadius: BorderRadius.all(Radius.circular(15.0)),
               borderSide: BorderSide(color: Color(0xFF004400)),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              borderRadius: BorderRadius.all(Radius.circular(15.0)),
               borderSide: BorderSide(color: Color(0xFF004400), width: 2.0),
             ),
+            hintStyle: TextStyle(
+              fontFamily: 'HelveticaNeueLight',
+              fontWeight: FontWeight.w300,
+              fontSize: 25,
+              color: Color(0xFF939393), // Color para el hintText #939393
+            ),
+            labelStyle: TextStyle(
+              fontFamily: 'HelveticaNeueLight',
+              fontWeight: FontWeight.w300,
+              fontSize: 16,
+              color: Color(0xFF939393), // Color para las etiquetas de los inputs
+            ),
+          ),
+          textSelectionTheme: const TextSelectionThemeData(
+            cursorColor: Color(0xFF004400), // Color del cursor
           ),
           buttonTheme: ButtonThemeData(
             buttonColor: const Color(0xFF004400), // Color para los botones verde oscuro
@@ -77,7 +92,6 @@ class AppTheme {
             secondary: const Color(0xFF27AE60), // Color de énfasis
           ),
         );
-        
       default:
         return ThemeData.light(); // Tema por defecto si no coincide ninguna empresa
     }

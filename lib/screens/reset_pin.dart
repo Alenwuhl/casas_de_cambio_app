@@ -76,7 +76,7 @@ class ResetPin extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: screenHeight * 0.01), // Ajusta el espaciado según sea necesario
+              SizedBox(height: screenHeight * 0.01), 
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
                 child: Text(

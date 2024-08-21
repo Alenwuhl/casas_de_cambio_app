@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; 
 
 class PerfilScreen extends StatefulWidget {
   const PerfilScreen({super.key});
@@ -91,7 +92,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
             children: [
               SizedBox(height: screenHeight * 0.03),
               Text(
-                'Perfil',
+                AppLocalizations.of(context)!.profileTitle, 
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(height: screenHeight * 0.03),
@@ -105,8 +106,8 @@ class _PerfilScreenState extends State<PerfilScreen> {
                         : FileImage(File(_imageFile!.path)),
                     child: _imageFile == null
                         ? Image.asset(
-                            'assets/general_icons/icono-Usuario.png', // Icono verde en tus assets
-                            color: Colors.white, // Se mostrará en blanco
+                            'assets/general_icons/icono-Usuario.png', 
+                            color: Colors.white, 
                             width: screenWidth * 0.15,
                           )
                         : null,
@@ -124,7 +125,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                               children: [
                                 ListTile(
                                   leading: const Icon(Icons.camera_alt),
-                                  title: const Text('Cámara'),
+                                  title: Text(AppLocalizations.of(context)!.cameraOption), 
                                   onTap: () {
                                     _pickImage(ImageSource.camera);
                                     Navigator.of(context).pop();
@@ -132,7 +133,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                                 ),
                                 ListTile(
                                   leading: const Icon(Icons.photo_library),
-                                  title: const Text('Galería'),
+                                  title: Text(AppLocalizations.of(context)!.galleryOption), 
                                   onTap: () {
                                     _pickImage(ImageSource.gallery);
                                     Navigator.of(context).pop();
@@ -156,13 +157,13 @@ class _PerfilScreenState extends State<PerfilScreen> {
               ),
               SizedBox(height: screenHeight * 0.08),
               Text(
-                'Nombre Completo del Usuario', // Aquí se debe reemplazar por el nombre real
+                AppLocalizations.of(context)!.fullNamePlaceholder, 
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               SizedBox(height: screenHeight * 0.08),
               ListTile(
                 title: Text(
-                  'Recibir Notificaciones',
+                  AppLocalizations.of(context)!.receiveNotifications, 
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 trailing: Switch(
@@ -173,7 +174,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                     });
                   },
                   activeColor: Theme.of(context).primaryColor,
-                  inactiveTrackColor: Colors.grey, // El color gris cuando está desactivado
+                  inactiveTrackColor: Colors.grey, 
                 ),
               ),
               SizedBox(height: screenHeight * 0.08),
@@ -186,11 +187,11 @@ class _PerfilScreenState extends State<PerfilScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.005),
+                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.003),
                   minimumSize: Size(screenWidth * 0.8, screenHeight * 0.07),
                 ),
                 child: Text(
-                  'Datos Personales',
+                  AppLocalizations.of(context)!.personalDataButton, 
                   style: Theme.of(context).textTheme.labelLarge,
                 ),
               ),
@@ -204,11 +205,11 @@ class _PerfilScreenState extends State<PerfilScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.005),
+                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.003),
                   minimumSize: Size(screenWidth * 0.8, screenHeight * 0.07),
                 ),
                 child: Text(
-                  'Cambiar Contraseña',
+                  AppLocalizations.of(context)!.changePasswordButton, 
                   style: Theme.of(context).textTheme.labelLarge,
                 ),
               ),
@@ -222,11 +223,11 @@ class _PerfilScreenState extends State<PerfilScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.005),
+                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.003),
                   minimumSize: Size(screenWidth * 0.8, screenHeight * 0.07),
                 ),
                 child: Text(
-                  'Cambiar PIN',
+                  AppLocalizations.of(context)!.changePinButton, 
                   style: Theme.of(context).textTheme.labelLarge,
                 ),
               ),

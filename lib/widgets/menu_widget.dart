@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; 
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
@@ -32,7 +33,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Cotizaciones',
+                    AppLocalizations.of(context)!.quotes, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -48,7 +49,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Cambios',
+                    AppLocalizations.of(context)!.changes, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -64,7 +65,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Envío de Giro',
+                    AppLocalizations.of(context)!.sendTransfer, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -80,7 +81,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Recibir Giro',
+                    AppLocalizations.of(context)!.receiveTransfer, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -96,7 +97,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Consulta de Giro',
+                    AppLocalizations.of(context)!.transferQuery, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -112,7 +113,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Notificaciones',
+                    AppLocalizations.of(context)!.notifications, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -128,7 +129,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Sucursales',
+                    AppLocalizations.of(context)!.branches, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -144,7 +145,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Perfil',
+                    AppLocalizations.of(context)!.profile, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -160,7 +161,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Acerca de',
+                    AppLocalizations.of(context)!.about, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
@@ -176,7 +177,7 @@ class MenuDrawer extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
-                    'Cerrar Sesión',
+                    AppLocalizations.of(context)!.logout, 
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {

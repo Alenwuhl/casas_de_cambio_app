@@ -1,5 +1,6 @@
 import 'package:cambio_chaco_app/widgets/menu_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; 
 
 class InicialMenuScreen extends StatelessWidget {
   const InicialMenuScreen({super.key});
@@ -11,7 +12,7 @@ class InicialMenuScreen extends StatelessWidget {
     final screenHeight = mediaQuery.size.height;
 
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor, 
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         title: Row(
@@ -33,7 +34,7 @@ class InicialMenuScreen extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                Scaffold.of(context).openEndDrawer(); 
+                Scaffold.of(context).openEndDrawer();
               },
             ),
           ),
@@ -42,8 +43,8 @@ class InicialMenuScreen extends StatelessWidget {
       endDrawer: const MenuDrawer(),
       body: Center(
         child: Container(
-          height: screenHeight * 0.7, 
-          width: screenWidth * 0.9, 
+          height: screenHeight * 0.7,
+          width: screenWidth * 0.9,
           padding: EdgeInsets.symmetric(vertical: screenHeight * 0.03),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -53,7 +54,7 @@ class InicialMenuScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MenuButton(
-                label: 'Cotizaciones',
+                label: AppLocalizations.of(context)!.exchangeRates, 
                 onPressed: () {
                   // Acción para Cotizaciones
                 },
@@ -61,7 +62,7 @@ class InicialMenuScreen extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.03),
               MenuButton(
-                label: 'Cambios',
+                label: AppLocalizations.of(context)!.currencyExchange, 
                 onPressed: () {
                   // Acción para Cambios
                 },
@@ -69,7 +70,7 @@ class InicialMenuScreen extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.03),
               MenuButton(
-                label: 'Transferencias',
+                label: AppLocalizations.of(context)!.transfers, 
                 onPressed: () {
                   // Acción para Transferencias
                 },
@@ -77,7 +78,7 @@ class InicialMenuScreen extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.03),
               MenuButton(
-                label: 'Registrarse',
+                label: AppLocalizations.of(context)!.register, 
                 onPressed: () {
                   // Acción para Registrarse
                 },
@@ -85,7 +86,7 @@ class InicialMenuScreen extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.03),
               MenuButton(
-                label: 'Notificaciones',
+                label: AppLocalizations.of(context)!.notifications, 
                 onPressed: () {
                   // Acción para Notificaciones
                 },

@@ -34,12 +34,13 @@ flutter:
     - assets/cambio_chaco_assets/
     - assets/general_icons/
     - assets/general_icons/menu_drawer/
+    - assets/flags_iso/16/
+    - assets/flags_iso/24/
+    - assets/flags_iso/32/
+    - assets/flags_iso/48/
+    - assets/flags_iso/64/
+    - assets/flags_iso/128/
 
-  # Configuración de fuentes personalizadas (si aplica)
-  fonts:
-    - family: HelveticaNeueLight
-      fonts:
-        - asset: assets/fonts/HelveticaNeueLight.ttf
 
   # Configuración de internacionalización
   generate: true 

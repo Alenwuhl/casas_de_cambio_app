@@ -38,5 +38,8 @@
   "branches": "Branches",
   "profile": "Profile",
   "about": "About",
-  "logout": "Logout"
+  "logout": "Logout",
+  "spanish": "Spanish",
+  "english": "English",
+  "portuguese": "Portuguese"
 }

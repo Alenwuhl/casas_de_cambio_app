@@ -38,7 +38,9 @@
   "branches": "Sucursales",
   "profile": "Perfil",
   "about": "Acerca de",
-  "logout": "Cerrar Sesión"
-
+  "logout": "Cerrar Sesión",
+    "spanish": "Español",
+  "english": "Inglés",
+  "portuguese": "Portugues"
 }
 

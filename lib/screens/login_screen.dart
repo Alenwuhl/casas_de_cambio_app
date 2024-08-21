@@ -1,3 +1,4 @@
+import 'package:cambio_chaco_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart'; 
 
@@ -13,11 +14,86 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          PopupMenuButton<Locale>(
+            icon: const Icon(Icons.language, color: Colors.white, size: 30,),
+            onSelected: (Locale locale) {
+              // Cambia el idioma de la app
+              MyApp.of(context)?.setLocale(locale);
+            },
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<Locale>>[
+              PopupMenuItem<Locale>(
+                value: const Locale('es', 'ES'),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 12,
+                      backgroundColor: Colors.transparent,
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/flags_iso/128/es.png',
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: double.infinity,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(AppLocalizations.of(context)!.spanish), 
+                  ],
+                ),
+              ),
+              PopupMenuItem<Locale>(
+                value: const Locale('en', 'US'),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 12,
+                      backgroundColor: Colors.transparent,
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/flags_iso/128/us.png',
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: double.infinity,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(AppLocalizations.of(context)!.english), 
+                  ],
+                ),
+              ),
+              PopupMenuItem<Locale>(
+                value: const Locale('pt', 'BR'),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 12,
+                      backgroundColor: Colors.transparent,
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/flags_iso/128/br.png',
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: double.infinity,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(AppLocalizations.of(context)!.portuguese), 
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           Positioned(
-            top: -topPadding, // Mueve la imagen hacia arriba eliminando el espacio del SafeArea
+            top: -topPadding,
             left: 0,
             right: 0,
             child: Image.asset(
@@ -28,7 +104,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: screenHeight * 0.3), 
+            padding: EdgeInsets.only(top: screenHeight * 0.3),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
               child: Column(
@@ -43,8 +119,7 @@ class LoginScreen extends StatelessWidget {
                         fontWeight: FontWeight.w300,
                       ),
                       prefixIcon: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.02),
+                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
                         child: Image.asset(
                           'assets/general_icons/icono-Usuario.png',
                           width: screenWidth * 0.06,
@@ -64,8 +139,7 @@ class LoginScreen extends StatelessWidget {
                         fontWeight: FontWeight.w300,
                       ),
                       prefixIcon: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.02),
+                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
                         child: Image.asset(
                           'assets/general_icons/icono-password.png',
                           width: screenWidth * 0.06,
@@ -85,8 +159,7 @@ class LoginScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
-                      padding: EdgeInsets.symmetric(
-                          vertical: screenHeight * 0.01),
+                      padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
                     ),
                     child: Text(
                       AppLocalizations.of(context)!.loginButton,
@@ -103,8 +176,7 @@ class LoginScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
-                      padding: EdgeInsets.symmetric(
-                          vertical: screenHeight * 0.01),
+                      padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
                     ),
                     child: Text(
                       AppLocalizations.of(context)!.registerButton, 

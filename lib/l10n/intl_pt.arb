@@ -41,5 +41,12 @@
   "logout": "Sair",
   "spanish": "Spanish",
   "english": "English",
-  "portuguese": "Portuguese"
+  "portuguese": "Portuguese",
+  "exchangeRates": "Taxas de Câmbio",
+  "buyLabel": "Compra",
+  "sellLabel": "Venda",
+  "noRatesAvailable": "Não há taxas de câmbio disponíveis.",
+  "errorLoadingRates": "Erro ao carregar as taxas de câmbio.",
+  "searchLabel": "Pesquisar",
+  "sortLabel": "Ordenar alfabeticamente"
 }

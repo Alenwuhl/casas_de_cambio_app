@@ -39,8 +39,15 @@
   "profile": "Perfil",
   "about": "Acerca de",
   "logout": "Cerrar Sesión",
-    "spanish": "Español",
+  "spanish": "Español",
   "english": "Inglés",
-  "portuguese": "Portugues"
+  "portuguese": "Portugues",
+  "exchangeRates": "Cotizaciones",
+  "buyLabel": "Compra",
+  "sellLabel": "Venta",
+  "noRatesAvailable": "No hay cotizaciones disponibles.",
+  "errorLoadingRates": "Error al cargar las cotizaciones.",
+  "searchLabel": "Buscar",
+  "sortLabel": "Ordenar alfabéticamente"
 }
 

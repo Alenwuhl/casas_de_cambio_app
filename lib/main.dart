@@ -1,3 +1,4 @@
+import 'package:cambio_chaco_app/screens/cotizaciones_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Cambio Chaco App',
       theme: AppTheme.getTheme(companyName),
-      home: const LoginScreen(),
+      home: const CotizacionesScreen(),
       locale: _locale,
       supportedLocales: const [
         Locale('es', 'ES'), // Español

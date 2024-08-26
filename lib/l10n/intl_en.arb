@@ -41,5 +41,12 @@
   "logout": "Logout",
   "spanish": "Spanish",
   "english": "English",
-  "portuguese": "Portuguese"
+  "portuguese": "Portuguese",
+  "exchangeRates": "Exchange Rates",
+  "buyLabel": "Buy",
+  "sellLabel": "Sell",
+  "noRatesAvailable": "No exchange rates available.",
+  "errorLoadingRates": "Error loading exchange rates.",
+  "searchLabel": "Search",
+  "sortLabel": "Sort Alphabetically"
 }

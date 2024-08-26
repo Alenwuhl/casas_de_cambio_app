@@ -18,6 +18,18 @@ class AppTheme {
               fontSize: 35,
               color: Color(0xFF004400), // Color para el texto principal #004400
             ),
+            titleMedium: TextStyle(
+              fontFamily: 'HelveticaNeueLight',
+              fontWeight: FontWeight.w500,
+              fontSize: 30,
+              color: Color(0xFF004400), // Color para el texto principal #004400
+            ),
+            titleSmall: TextStyle(
+              fontFamily: 'HelveticaNeueLight',
+              fontWeight: FontWeight.w200,
+              fontSize: 13,
+              color: Color(0xFF004400), // Color para el texto principal #004400
+            ),
             displayLarge: TextStyle(
               fontFamily: 'HelveticaNeueLight',
               fontWeight: FontWeight.w300,
@@ -33,7 +45,7 @@ class AppTheme {
             displaySmall: TextStyle(
               fontFamily: 'HelveticaNeueLight',
               fontWeight: FontWeight.w300,
-              fontSize: 16,
+              fontSize: 12,
               color: Color(0xFF004400), // Color para el texto secundario #004400
             ),
             labelLarge: TextStyle(

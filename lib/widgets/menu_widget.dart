@@ -1,3 +1,4 @@
+import 'package:cambio_chaco_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart'; 
 
@@ -21,6 +22,42 @@ class MenuDrawer extends StatelessWidget {
             ),
           ),
           SizedBox(height: screenHeight * 0.02),
+          // Opción para cambiar el idioma
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
+            child: ListTile(
+              leading: Icon(
+                Icons.language,
+                size: screenWidth * 0.07,
+                color: Theme.of(context).primaryColor,
+              ),
+              trailing: DropdownButton<Locale>(
+                value: Localizations.localeOf(context),
+                onChanged: (Locale? newLocale) {
+                  if (newLocale != null) {
+                    // Cambiar el idioma
+                    MyApp.of(context)!.setLocale(newLocale);
+                  }
+                },
+                items: const [
+                  DropdownMenuItem(
+                    value: Locale('es', 'ES'),
+                    child: Text('Español'),
+                  ),
+                  DropdownMenuItem(
+                    value: Locale('en', 'US'),
+                    child: Text('English'),
+                  ),
+                  DropdownMenuItem(
+                    value: Locale('pt', 'BR'),
+                    child: Text('Português'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(thickness: 1, color: Colors.grey[300]),
+          SizedBox(height: screenHeight * 0.01),
           Expanded(
             child: ListView(
               padding: EdgeInsets.zero,

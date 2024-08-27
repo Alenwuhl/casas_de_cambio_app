@@ -20,8 +20,8 @@ class AppTheme {
             ),
             titleMedium: TextStyle(
               fontFamily: 'HelveticaNeueLight',
-              fontWeight: FontWeight.w500,
-              fontSize: 30,
+              fontWeight: FontWeight.w600,
+              fontSize: 25,
               color: Color(0xFF004400), // Color para el texto principal #004400
             ),
             titleSmall: TextStyle(
@@ -94,10 +94,17 @@ class AppTheme {
           textSelectionTheme: const TextSelectionThemeData(
             cursorColor: Color(0xFF004400), // Color del cursor
           ),
-          buttonTheme: ButtonThemeData(
-            buttonColor: const Color(0xFF004400), // Color para los botones verde oscuro
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF004400), // Color para los botones verde oscuro
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              textStyle: const TextStyle(
+                fontFamily: 'HelveticaNeueBold',
+                fontSize: 18,
+                color: Colors.white,
+              ),
             ),
           ),
           colorScheme: ColorScheme.fromSwatch().copyWith(

@@ -18,6 +18,7 @@ dependencies:
     sdk: flutter
   intl: ^0.19.0
   http: ^1.2.2
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -41,7 +42,7 @@ flutter:
     - assets/flags_iso/48/
     - assets/flags_iso/64/
     - assets/flags_iso/128/
-    - assets/flags_cotizaciones/
+    - .env
 
 
   # Configuración de internacionalización

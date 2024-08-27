@@ -1,8 +1,6 @@
-import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:http/io_client.dart';
+import 'package:cambio_chaco_app/services/get_cotizaciones_service.dart';
 import 'package:cambio_chaco_app/widgets/cotizaciones_widget.dart';
 
 class CotizacionesScreen extends StatefulWidget {
@@ -19,28 +17,12 @@ class _CotizacionesScreenState extends State<CotizacionesScreen> {
   String searchQuery = "";
   bool isSearchVisible = false;
 
+  final GetCotizacionesService _cotizacionesService = GetCotizacionesService();
+
   @override
   void initState() {
     super.initState();
-    cotizaciones = fetchCotizaciones();
-  }
-
-  Future<List<Cotizacion>> fetchCotizaciones() async {
-    final ioc = HttpClient()
-      ..badCertificateCallback =
-          (X509Certificate cert, String host, int port) => true;
-    final httpClient = IOClient(ioc);
-
-    final response = await httpClient.get(Uri.parse(
-        'https://192.168.2.188:8443/DynCamWebJavaEnvironment/webservices/apidynatechcambios/GetCotizaciones?Cotfec=2024-08-13&Sucid=15'));
-
-    if (response.statusCode == 200) {
-      final List<dynamic> jsonResponse =
-          json.decode(response.body)['SdtCotizacionesWS'];
-      return jsonResponse.map((data) => Cotizacion.fromJson(data)).toList();
-    } else {
-      throw Exception(AppLocalizations.of(context)!.errorLoadingRates);
-    }
+    cotizaciones = _cotizacionesService.fetchCotizaciones();
   }
 
   void updateSearchQuery(String query) {
@@ -51,7 +33,6 @@ class _CotizacionesScreenState extends State<CotizacionesScreen> {
       }).toList();
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +112,6 @@ class _CotizacionesScreenState extends State<CotizacionesScreen> {
                           .contains(searchQuery);
                     }).toList()
                   : cotizacionesList;
-
 
               return Column(
                 children: [

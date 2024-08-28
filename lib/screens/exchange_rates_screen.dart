@@ -156,7 +156,7 @@ void initState() {
                       ),
                     ),
                   Expanded(
-                    child: CotizacionesWidget(
+                    child: ExchangeRatesWidget(
                       cotizaciones: cotizaciones,
                       cotizacionesList: cotizacionesList,
                       filteredCotizaciones: filteredCotizaciones,

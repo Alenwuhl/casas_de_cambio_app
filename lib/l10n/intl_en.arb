@@ -53,5 +53,8 @@
   "availability": "Availability",
   "operationLimit": "Operation Limit",
   "nextButton": "Next",
-  "language": "Language"
+  "language": "Language",
+  "exitButton": "Exit",
+  "operationSuccess": "Operation Successful",
+  "urlNotDefined": "URL not defined in the .env file"
 }

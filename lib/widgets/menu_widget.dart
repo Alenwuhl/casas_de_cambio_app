@@ -1,4 +1,7 @@
 import 'package:cambio_chaco_app/main.dart';
+import 'package:cambio_chaco_app/screens/exchange_rates_screen.dart';
+import 'package:cambio_chaco_app/screens/exchange_screen.dart';
+import 'package:cambio_chaco_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart'; 
 
@@ -37,6 +40,7 @@ class MenuDrawer extends StatelessWidget {
                   if (newLocale != null) {
                     // Cambiar el idioma
                     MyApp.of(context)!.setLocale(newLocale);
+                    Navigator.of(context).pop();
                   }
                 },
                 items: const [
@@ -74,7 +78,11 @@ class MenuDrawer extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
-                    // Acción para Cotizaciones
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ExchangeRatesScreen(),
+                      ),
+                    );
                   },
                 ),
                 SizedBox(height: screenHeight * 0.01),
@@ -90,7 +98,11 @@ class MenuDrawer extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
-                    // Acción para Cambios
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ExchangeScreen(),
+                      ),
+                    );
                   },
                 ),
                 SizedBox(height: screenHeight * 0.01),
@@ -186,7 +198,11 @@ class MenuDrawer extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: screenWidth * 0.045),
                   ),
                   onTap: () {
-                    // Acción para Perfil
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ProfileScreen(),
+                      ),
+                    );
                   },
                 ),
                 SizedBox(height: screenHeight * 0.01),

@@ -135,7 +135,7 @@ class _PayeeFormScreen extends State<PayeeFormScreen> {
                   });
                 },
                 decoration: InputDecoration(
-                  labelText: AppLocalizations.of(context)!.cameraOption, // Localizado
+                  labelText: AppLocalizations.of(context)!.cameraOption, 
                   labelStyle: Theme.of(context).textTheme.displayLarge,
                   filled: true,
                   fillColor: Colors.white,

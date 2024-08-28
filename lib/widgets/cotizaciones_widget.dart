@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:cambio_chaco_app/screens/cotizaciones_screen.dart';
+import 'package:cambio_chaco_app/screens/exchange_rates_screen.dart';
 
 class CotizacionesWidget extends StatelessWidget {
   final Future<List<Cotizacion>> cotizaciones;
@@ -136,7 +136,7 @@ class CotizacionesWidget extends StatelessWidget {
   }
 
   Widget formatMonNom(String monNom, BuildContext context) {
-    final words = monNom.split(' '); // Dividimos el texto en palabras
+    final words = monNom.split(' '); 
     return RichText(
       text: TextSpan(
         style: Theme.of(context).textTheme.titleSmall?.copyWith(

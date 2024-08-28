@@ -1,4 +1,4 @@
-import 'package:cambio_chaco_app/screens/cotizaciones_screen.dart';
+import 'package:cambio_chaco_app/screens/exchange_rates_screen.dart';
 import 'package:cambio_chaco_app/services/get_cotizaciones_service.dart';
 import 'package:cambio_chaco_app/widgets/currency_dropdown_widget.dart';
 import 'package:flutter/material.dart';
@@ -23,19 +23,26 @@ class _ExchangeScreenState extends State<ExchangeScreen> {
   List<Cotizacion> cotizacionesList = [];
   final GetCotizacionesService _cotizacionesService = GetCotizacionesService();
 
-  @override
-  void initState() {
-    super.initState();
-    cotizaciones = _cotizacionesService.fetchCotizaciones();
-  }
+@override
+void initState() {
+  super.initState();
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    cotizaciones = _cotizacionesService.fetchCotizaciones(context);
+    setState(() {});
+  });
+}
+
 
   void calculateConversion() {
     if (selectedCurrency != null && selectedPaymentCurrency != null) {
-      final selectedCotizacion = cotizacionesList.firstWhere((cot) => cot.monNom == selectedCurrency);
-      final paymentCotizacion = cotizacionesList.firstWhere((cot) => cot.monNom == selectedPaymentCurrency);
+      final selectedCotizacion =
+          cotizacionesList.firstWhere((cot) => cot.monNom == selectedCurrency);
+      final paymentCotizacion = cotizacionesList
+          .firstWhere((cot) => cot.monNom == selectedPaymentCurrency);
 
       setState(() {
-        conversionRate = double.parse(selectedCotizacion.cotCom) / double.parse(paymentCotizacion.cotVen);
+        conversionRate = double.parse(selectedCotizacion.cotCom) /
+            double.parse(paymentCotizacion.cotVen);
         conversionResult = inputAmount * conversionRate;
       });
     }
@@ -50,6 +57,10 @@ class _ExchangeScreenState extends State<ExchangeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -153,9 +164,11 @@ class _ExchangeScreenState extends State<ExchangeScreen> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       labelText: AppLocalizations.of(context)!.enterAmount,
-                      labelStyle: Theme.of(context).inputDecorationTheme.labelStyle,
+                      labelStyle:
+                          Theme.of(context).inputDecorationTheme.labelStyle,
                       border: Theme.of(context).inputDecorationTheme.border,
-                      focusedBorder: Theme.of(context).inputDecorationTheme.focusedBorder,
+                      focusedBorder:
+                          Theme.of(context).inputDecorationTheme.focusedBorder,
                     ),
                     onChanged: (value) {
                       setState(() {
@@ -201,32 +214,34 @@ class _ExchangeScreenState extends State<ExchangeScreen> {
                     AppLocalizations.of(context)!.availability,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  const Text(
-                    'Guaraníes 3.696.200',
-                    style: TextStyle(
-                      fontFamily: 'HelveticaNeueLight',
-                      color: Color(0xFF004400),
-                      fontSize: 18,
-                    ),
-                  ),
+                  // const Text(
+                  //   'Guaraníes 3.696.200',
+                  //   style: TextStyle(
+                  //     fontFamily: 'HelveticaNeueLight',
+                  //     color: Color(0xFF004400),
+                  //     fontSize: 18,
+                  //   ),
+                  // ),
                   SizedBox(height: screenHeight * 0.02),
                   // Nota de límite de operación
-                  Text(
-                    '*${AppLocalizations.of(context)!.operationLimit}',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
+                  // Text(
+                  //   '*${AppLocalizations.of(context)!.operationLimit}',
+                  //   style: Theme.of(context).textTheme.bodyLarge,
+                  // ),
                   SizedBox(height: screenHeight * 0.04),
                   // Botón Siguiente
                   Center(
                     child: ElevatedButton(
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           horizontal: screenWidth * 0.1,
                           vertical: screenHeight * 0.005,
                         ),
-                        textStyle: Theme.of(context).textTheme.labelLarge?.copyWith(color: Colors.white),
+                        textStyle: Theme.of(context)
+                            .textTheme
+                            .labelLarge
+                            ?.copyWith(color: Colors.white),
                       ),
                       child: Text(AppLocalizations.of(context)!.nextButton),
                     ),

@@ -53,6 +53,9 @@
   "availability": "Disponibilidad",
   "operationLimit": "Límite de operación",
   "nextButton": "Siguiente",
-  "language": "Idioma"
+  "language": "Idioma",
+  "exitButton": "Salir",
+  "operationSuccess": "Operación Exitosa",
+  "urlNotDefined": "URL no definida en el archivo .env"
 }
 

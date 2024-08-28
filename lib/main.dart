@@ -1,8 +1,9 @@
 import 'package:cambio_chaco_app/screens/exchange_screen.dart';
+import 'package:cambio_chaco_app/widgets/operation_success_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:cambio_chaco_app/screens/cotizaciones_screen.dart';
+import 'package:cambio_chaco_app/screens/exchange_rates_screen.dart';
 import 'package:cambio_chaco_app/screens/login_screen.dart';
 import 'package:cambio_chaco_app/theme.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart'; // Importar dotenv
@@ -38,7 +39,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Cambio Chaco App',
       theme: AppTheme.getTheme(companyName),
-      home: const ExchangeScreen(),
+      home: const OperationSuccessWidget(),
       locale: _locale,
       supportedLocales: const [
         Locale('es', 'ES'), // Español

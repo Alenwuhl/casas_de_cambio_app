@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:cambio_chaco_app/screens/exchange_rates_screen.dart';
 
-class CotizacionesWidget extends StatelessWidget {
+class ExchangeRatesWidget extends StatelessWidget {
   final Future<List<Cotizacion>> cotizaciones;
   final List<Cotizacion> cotizacionesList;
   final List<Cotizacion> filteredCotizaciones;
   final String searchQuery;
 
-  const CotizacionesWidget({
+  const ExchangeRatesWidget({
     required this.cotizaciones,
     required this.cotizacionesList,
     required this.filteredCotizaciones,

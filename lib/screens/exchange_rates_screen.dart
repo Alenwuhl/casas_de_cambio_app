@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:cambio_chaco_app/services/get_cotizaciones_service.dart';
-import 'package:cambio_chaco_app/widgets/cotizaciones_widget.dart';
+import 'package:cambio_chaco_app/widgets/exchange_rates_widget.dart';
 
 class ExchangeRatesScreen extends StatefulWidget {
   const ExchangeRatesScreen({super.key});
